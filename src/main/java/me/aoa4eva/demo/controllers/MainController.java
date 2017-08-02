@@ -13,49 +13,41 @@ public class MainController {
     public String index(Model model)
 
     {
-        String message = "This is the login page";
-        model.addAllAttributes("myMessage", message);
+        String message = "Welcome to the Invoice Application";
+        model.addAttribute("index", "Welcome to the Invoice Application");
         return "index";
     }
 
     @PostMapping("/index")
-    public @ResponseBody String index(){ return "This is the index" ; }
+    public @ResponseBody
+    String index() {
+        return "This is the index";
+    }
 
 
     @RequestMapping("/login")
-    public String login(Model model)
-    {
-    String message = "This is the login page";
-    model.addAllAttributes("myMessage1", message);
+    public String login(Model model) {
+        String message = "This is the login page";
+        model.addAttribute("login", "Welcome to the Invoice Application");
         return "login";
     }
-   @PostMapping("/login")
-    public @ResponseBody  String login() { return "Please login below" ; }
 
 
     @RequestMapping("/addproduct")
-    public String addProduct(Model model)
-    {
+    public String addProduct(Model model) {
         String message = "Add a product here";
-        model.addAllAttributes("myMessage2", message);
+        model.addAttribute("addProduct", "Welcome to the Invoice Application");
         return "Add a product here";
     }
 
-    @PostMapping("/addproduct")
-     public @ResponseBody String addProduct() { return "Add a product here" ; }
 
-    @RequestMapping("/listproducts")
-    public String listProducts(Model model)
-    {
+    @RequestMapping("/listProducts")
+    public String listProducts(Model model) {
         String message = "Here is a list of your products";
-        model.addAllAttributes("myMessage3", message)
+        model.addAttribute("listProducts", "Welcome to the Invoice Application");
         return "Here is a list of your products";
     }
-
-    @PostMapping("/listproducts")
-    public @ResponseBody String listProducts(){ return "Here is a list of your products" ; }
-
-    }
-
-
 }
+
+
+
